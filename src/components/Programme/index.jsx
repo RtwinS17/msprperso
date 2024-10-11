@@ -12,6 +12,7 @@ const Concerts = () => {
       .then(response => response.json())
       .then(data => {
         setConcerts(data);
+        setFilteredConcerts(data); // Par défaut, afficher tous les concerts
 
         // Pour chaque concert, on récupère l'ID de l'image et on fait une requête pour récupérer son URL
         data.forEach(concert => {
@@ -32,13 +33,7 @@ const Concerts = () => {
       .catch(error => console.error('Erreur lors de la récupération des concerts:', error));
   }, [categoryId]);
 
-  // Fonction pour formater la date
-const formatDate = (dateString) => {
-    // Reformater la chaîne de "20241017" en "2024-10-17"
-    const formattedDate = `${dateString.slice(0, 4)}-${dateString.slice(4, 6)}-${dateString.slice(6, 8)}`;
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(formattedDate).toLocaleDateString(undefined, options);
-  };
+ 
 
   // Fonction pour formater l'heure
   const formatTime = (timeString) => {
