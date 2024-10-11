@@ -61,28 +61,32 @@ const Concerts = () => {
   };
 
   return (
-    <div>
-      <h1 className='p-12 font-extrabold text-3xl'>Concerts</h1>
+    
+        
+            
+        <div className='flex flex-col w-full  p-8'>
+
+      <h1 className=' flex p-6 font-extrabold text-3xl justify-center'>Concerts</h1>
 
       {/* Boutons de filtre */}
-      <div className="space-x-4 mb-4">
-        <button onClick={showAllArtists} className="bg-blue-500 text-white px-4 py-2 rounded">Afficher tous les artistes</button>
-        <button onClick={filterByDate5Sep2025} className="bg-green-500 text-white px-4 py-2 rounded">Concerts du 5 septembre 2025</button>
-        <button onClick={filterByDate6Sep2025} className="bg-red-500 text-white px-4 py-2 rounded">Concerts du 6 septembre 2025</button>
+      <div className="flex  space-x-4 mb-4 justify-center ">
+        <button onClick={showAllArtists} className="bg-azure text-white px-4 py-2 rounded">Tous les artistes</button>
+        <button onClick={filterByDate5Sep2025} className="bg-azure text-white px-4 py-2 rounded">Concerts du samedi</button>
+        <button onClick={filterByDate6Sep2025} className="bg-red-500 text-white px-4 py-2 rounded">Concerts du dimanche</button>
       </div>
 
       <ul>
         {filteredConcerts.map(concert => (
           <li key={concert.id} className='flex flex-col m-6'>
           
-            <div className='flex space-x-4'>
+            <div className='flex items-center space-x-4'>
               <div className='w-52'>
                 {/* Afficher l'image si elle existe */}
                 {images [concert.id] && <img src={images[concert.id]} alt={concert.title.rendered} />}
               </div>
             
             {/* Informations du concert */}
-            <div className='w-full md:w-3/4 flex flex-col items-start'>
+            <div className='w-full md:w-3/4 flex flex-col items-start justify-start'>
               <h2 className='text-xl font-semibold'>{concert.title.rendered}</h2>
               <p className='text-gray-700'>Scène: {concert.acf.scene}</p>
               <p>{dayjs(concert.acf.date).format('DD/MM/YYYY')}</p>
@@ -92,7 +96,7 @@ const Concerts = () => {
           </li>
         ))}
       </ul>
-    </div>
+      </div>
   );
 };
 

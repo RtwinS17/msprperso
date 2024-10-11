@@ -1,6 +1,7 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import logo1 from "../../assets/images/logo1.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -37,8 +38,8 @@ const Header = () => {
             {/* Navigation en dessous du header pour les écrans larges */}
       <nav className="bg-white shadow-md hidden md:block">
         <ul className="flex justify-between px-10 p-4">
-          <li><a href="#home" className="hover:text-azure">Accueil</a></li>
-          <li><a href="#programme" className="hover:text-azure">Programme</a></li>
+          <li><Link className="hover:text-azure" to="/">Accueil</Link></li>
+          <li><Link className="hover:text-azure" to="/concerts">Programme</Link></li>
           <li><a href="#billetterie" className="hover:text-azure">Billetterie</a></li>
           <li><a href="#carte" className="hover:text-azure">Carte</a></li>
           <li><a href="#faq" className="hover:text-azure">FAQ</a></li>
