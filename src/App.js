@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Header from './components/Header';
 import Accueil from './components/Accueil';
 import Concerts from './components/Programme';
+import Billets from './components/Billetterie';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
        <Routes>
         <Route path="/" element={<Accueil />} />
        <Route path="/concerts" element={<Concerts />} />
+       <Route path="/billets" element={<Billets />} />
       </Routes> 
      
     </Router>

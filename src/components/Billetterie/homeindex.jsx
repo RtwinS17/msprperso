@@ -5,7 +5,7 @@ import {  FaArrowRight } from "react-icons/fa";
 const Homebillets = () => {
 
     return (
-        <Link to="/concerts" className="flex w-11/12 font-sans font-bold rounded-md p-2 border-2 border-coral ">
+        <Link to="/billets" className="flex w-11/12 font-sans font-bold rounded-md p-2 border-2 border-coral ">
             
             <div className="flex w-full items-center justify-between">
                <span className="text-lg "> Achetez 
