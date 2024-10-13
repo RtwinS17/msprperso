@@ -2,6 +2,8 @@ import React from "react";
 import Homeconcerts from "../Programme/homeindex";
 import Homebillets from "../Billetterie/homeindex";
 import Homeinfos from "../Infos/homeindex";
+import Homemap from "../Carte/homeindex";
+import Homeindex from "../Partenaires/homeindex";
 
 const Accueil = () => {
     return (
@@ -9,6 +11,8 @@ const Accueil = () => {
             < Homeconcerts />
             <Homebillets />
             <Homeinfos />
+            <Homemap />
+            <Homeindex />
         </div>
     );
 }
