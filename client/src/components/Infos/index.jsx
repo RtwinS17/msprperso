@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import FAQ from "../Faq";
 
 const Infos = () => {
   const [alertes, setAlertes] = useState([]);
@@ -28,6 +29,7 @@ const Infos = () => {
           </div>
         ))}
       </div>
+      <FAQ />
     </div>
   );
 };

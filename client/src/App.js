@@ -7,6 +7,7 @@ import Concerts from './components/Programme';
 import Billets from './components/Billetterie';
 import Partenaires from './components/Partenaires';
 import Infos from './components/Infos';
+import FAQ from './components/Faq';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
        <Route path="/billets" element={<Billets />} />
        <Route path="/infos" element={<Infos />} />
        <Route path="/partenaires" element={<Partenaires />} />
+       <Route path="/faq" element={<FAQ />} />
       </Routes> 
      
     </Router>
