@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <>
-             <header className="bg-darkPurple text-white p-4 flex justify-between items-center">
+             <header className="bg-orange text-white p-4 flex justify-between items-center">
         {/* Section gauche : Icônes des réseaux sociaux */}
         <div className="flex flex-col md:flex-row items-center space-y-2 md:space-x-3 md:space-y-0">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">

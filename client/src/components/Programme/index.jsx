@@ -70,9 +70,9 @@ const Concerts = () => {
 
       {/* Boutons de filtre */}
       <div className="flex  space-x-4 mb-4 justify-center ">
-        <button onClick={showAllArtists} className="bg-coral text-white px-4 py-2 rounded font-semibold text-sm md:text-base">Tous les artistes</button>
-        <button onClick={filterByDate5Sep2025} className="bg-coral text-white px-4 py-2 rounded font-semibold text-sm md:text-base">Concerts du samedi</button>
-        <button onClick={filterByDate6Sep2025} className="bg-coral text-white px-4 py-2 rounded font-semibold text-sm md:text-base">Concerts du dimanche</button>
+        <button onClick={showAllArtists} className="bg-coral hover:bg-darkPurple active:bg-darkPurple text-white px-4 py-2 rounded shadow-md font-semibold text-sm md:text-base">Tous les artistes</button>
+        <button onClick={filterByDate5Sep2025} className="bg-coral hover:bg-darkPurple active:bg-darkPurple text-white px-4 py-2 rounded font-semibold text-sm md:text-base">Concerts du samedi</button>
+        <button onClick={filterByDate6Sep2025} className="bg-coral hover:bg-darkPurple active:bg-darkPurple text-white px-4 py-2 rounded font-semibold text-sm md:text-base">Concerts du dimanche</button>
       </div>
 
       <ul>

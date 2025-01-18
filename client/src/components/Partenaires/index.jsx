@@ -25,7 +25,7 @@ const Partenaires = () => {
                 return { ...partenaire, logoUrl: null }; // En cas d'erreur
               }
             } else {
-              return { ...partenaire, logoUrl: null }; // Si aucun logo
+              return { ...partenaire, logoUrl: null }; // Si pas de logo
             }
           })
         );
@@ -35,8 +35,8 @@ const Partenaires = () => {
   }, [categoryId]);
 
   return (
-    <div className="flex flex-col items-center bg-antiFlashWhite p-4 w-full">
-      <h2 className="text-2xl font-bold mb-4 md:text-lg">Nos partenaires :</h2>
+    <div className="border border-y-8 bg-white flex flex-col items-center  p-4 w-full">
+      <h2 className="text-2xl text-darkPurple font-bold mb-4 md:text-lg">Nos partenaires :</h2>
       <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
         {partenaires.map((partenaire) => (
           <div key={partenaire.id} className="flex-none">

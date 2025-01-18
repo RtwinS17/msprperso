@@ -35,16 +35,26 @@ db.connect((err) => {
     });
   });
 
-    // Ajout d'une question/réponse dans la FAQ
-  app.post("/faq", (req, res) => {
+
+  // Ajout d'une question/réponse dans la FAQ
+app.post("/faq", (req, res) => {
   const { question, reponse } = req.body;
+  if (!question || !reponse) {
+    return res.status(400).json({ error: "Les champs question et réponse sont obligatoires." });
+  }
+
+  if (question.length > 255 || reponse.length > 1000) {
+    return res.status(400).json({
+      error: "La question ou la réponse dépasse la longueur autorisée.",
+    });
+  }
   const query = "INSERT INTO faq (question, reponse) VALUES (?, ?)";
   db.query(query, [question, reponse], (err, results) => {
     if (err) {
       console.error(err);
-      res.status(500).send("Erreur lors de l'ajout de la FAQ");
+      res.status(500).json({ error: "Erreur lors de l'ajout de la FAQ." });
     } else {
-      res.status(201).send("FAQ ajoutée avec succès");
+      res.status(201).json({ message: "FAQ ajoutée avec succès." });
     }
   });
 });
@@ -75,6 +85,38 @@ app.put("/faq/:id", (req, res) => {
     } else {
       res.status(200).send("FAQ modifiée avec succès");
     }
+  });
+});
+///////////////////////////////////////////////////////////////////////////////
+  //Récupération des messages
+  app.get("/messages", (req, res) => {
+    const query = "SELECT * FROM messages";
+    db.query(query, (err, results) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Erreur lors de la récupération des messages");
+      } else {
+        res.json(results);
+      }
+    });
+  });
+
+// Route pour stocker un message
+app.post("/messages", (req, res) => {
+  const { name, email, subject, message } = req.body;
+
+  if (!name || !email || !subject || !message) {
+    return res.status(400).send("Tous les champs sont obligatoires.");
+  }
+
+  const query = "INSERT INTO messages (name, email, subject, message) VALUES (?, ?, ?, ?)";
+  db.query(query, [name, email, subject, message], (err, results) => {
+    if (err) {
+      console.error("Erreur lors de l'insertion du message :", err);
+      return res.status(500).send("Erreur lors de l'enregistrement du message.");
+    }
+
+    res.status(201).send("Message enregistré avec succès.");
   });
 });
 

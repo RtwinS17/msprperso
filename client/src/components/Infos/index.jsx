@@ -16,19 +16,21 @@ const Infos = () => {
   }, [categoryId]);
 
   return (
-    <div className="flex flex-col items-center bg-lightGrey py-6">
-      <h2 className="text-2xl font-bold mb-4">Dernières infos</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-5xl px-4">
+    <div className="flex flex-col items-center py-6">
+      
+        <h2 className="text-3xl font-bold mb-6">Dernières infos</h2>   
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 gap-6 lg:gap-20">
         {alertes.map((alerte) => (
           <div
             key={alerte.id}
-            className="bg-coral shadow-lg p-6 rounded-3xl border-l-4 border-orange-500"
+            className="bg-coral shadow-lg p-4 lg:p-6 rounded-3xl border-l-4 mb-8"
           >
-            <h3 className="md:text-xl font-semibold text-orange-600">{alerte.acf.titre}</h3>
+            <h3 className="md:text-xl font-semibold">{alerte.acf.titre}</h3>
             <p className="text-white mt-2 text-sm md:text-base">{alerte.acf.description}</p>
           </div>
         ))}
       </div>
+      <hr  className="w-10/12 my-8"/>
       <FAQ />
     </div>
   );
