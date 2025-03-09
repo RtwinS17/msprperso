@@ -1,29 +1,29 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import logo1 from "../../assets/images/logo1.png";
+import logo2 from "../../assets/images/logo2.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <>
-             <header className="bg-orange text-white p-4 flex justify-between items-center">
+             <header className="bg-orange text-white flex justify-around  items-center">
         {/* Section gauche : Icônes des réseaux sociaux */}
         <div className="flex flex-col md:flex-row items-center space-y-2 md:space-x-3 md:space-y-0">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className="h-4 w-4" />
+            <FaFacebook className="h-6 w-6" />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="h-4 w-4" />
+            <FaTwitter className="h-6 w-6" />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="h-4 w-4" />
+            <FaInstagram className="h-6 w-6" />
           </a>
         </div>
 
         {/* Section centrale : Logo */}
         <Link to="/"> 
-        <div className="flex flex-col items-center justify-center">
-            <img src={logo1} alt="logo" className="w-16 h-16 mx-auto"/>
+        <div className="flex flex-col">
+            <img src={logo2} alt="logo" className="w-32 h-32"/>
         </div>
 </Link>
         {/* Section droite : Menu hamburger pour petits écrans */}
@@ -38,12 +38,12 @@ const Header = () => {
            
             {/* Navigation en dessous du header pour les écrans larges */}
       <nav className="bg-white shadow-md hidden md:block">
-        <ul className="flex justify-between px-10 p-4">
+        <ul className="flex justify-around items-center p-4">
           <li><Link className="hover:text-azure" to="/">Accueil</Link></li>
           <li><Link className="hover:text-azure" to="/concerts">Programme</Link></li>
           <li><a href="#billetterie" className="hover:text-azure">Billetterie</a></li>
           <li><a href="#carte" className="hover:text-azure">Carte</a></li>
-          <li><a href="#faq" className="hover:text-azure">FAQ</a></li>
+          <li><Link className="hover:text-azure" to="/infos">Informations</Link></li>
         </ul>
       </nav>
         </>

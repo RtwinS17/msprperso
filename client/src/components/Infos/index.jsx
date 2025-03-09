@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FAQ from "../Faq";
+import ContactForm from "../Contact";
 
 const Infos = () => {
   const [alertes, setAlertes] = useState([]);
@@ -32,7 +33,14 @@ const Infos = () => {
       </div>
       <hr  className="w-10/12 my-8"/>
       <FAQ />
-    </div>
+      <hr  className="w-10/12 my-8"/>
+      <h1 className="text-3xl font-bold mb-2 text-center">
+        Contactez-nous
+      </h1>
+      <ContactForm />
+      </div>
+     
+    
   );
 };
 

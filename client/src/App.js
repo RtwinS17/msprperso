@@ -10,6 +10,9 @@ import Infos from './components/Infos';
 import FAQ from './components/Faq';
 import Footer from './components/Footer';
 import ContactForm from './components/Contact';
+import MapIndex from "./components/Carte";
+
+
 
 function App() {
   return (
@@ -27,6 +30,7 @@ function App() {
        <Route path="/partenaires" element={<Partenaires />} />
        <Route path="/faq" element={<FAQ />} />
        <Route path="/contact" element={<ContactForm />} />
+       <Route path="/map" element={<MapIndex />} />
       </Routes> 
       <Footer />
     </Router>
