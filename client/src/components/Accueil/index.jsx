@@ -9,11 +9,11 @@ import Partenaires from "../Partenaires";
 
 const Accueil = () => {
     return (
-        <div className="space-y-5 flex flex-col items-center mx-auto py-4 my-4 font-sans" >
+        <div className="space-y-8 flex flex-col items-center mx-auto py-4 my-4 font-sans" >
             <Homeconcerts />
             <Homebillets />
-            <Homeinfos />
             <Homemap />
+            <Homeinfos />
             <Partenaires />
             
         </div>
