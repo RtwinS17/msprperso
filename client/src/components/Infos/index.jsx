@@ -17,16 +17,16 @@ const Infos = () => {
   }, [categoryId]);
 
   return (
-    <div className="flex flex-col items-center py-6">
+    <div className="flex flex-col items-center p-8">
       
-        <h2 className="text-3xl font-bold mb-6">Dernières infos</h2>   
+        <h2 className="text-darkPurple text-3xl font-bold py-6 mb-8">Dernières infos</h2>   
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 gap-6 lg:gap-20">
         {alertes.map((alerte) => (
           <div
             key={alerte.id}
             className="bg-coral shadow-lg p-4 lg:p-6 rounded-3xl border-l-4 mb-8"
           >
-            <h3 className="md:text-xl font-semibold">{alerte.acf.titre}</h3>
+            <h3 className="md:text-xl text-center font-semibold">{alerte.acf.titre}</h3>
             <p className="text-white mt-2 text-sm md:text-base">{alerte.acf.description}</p>
           </div>
         ))}

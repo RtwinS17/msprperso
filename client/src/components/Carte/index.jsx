@@ -73,7 +73,10 @@ const MapIndex = () => {
     ];
 
     return (
-        <div className="w-10/12 md:w-8/12 h-screen mx-auto my-5">
+      <div className='flex flex-col w-full  p-8'>
+
+      <h1 className=' text-darkPurple flex p-6 font-extrabold text-3xl justify-center'>La Map du festival</h1>
+        <div className="w-full md:w-8/12 h-screen mx-auto my-5">
           <MapContainer center={[48.8648, 2.2525]} zoom={17} scrollWheelZoom={true} className="w-full h-full">
             {/* Fond de carte OpenStreetMap */}
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -85,6 +88,7 @@ const MapIndex = () => {
               </Marker>
             ))}
           </MapContainer>
+        </div>
         </div>
       );
     };

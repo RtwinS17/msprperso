@@ -41,8 +41,8 @@ const Header = () => {
         <ul className="flex justify-around items-center p-4">
           <li><Link className="hover:text-azure" to="/">Accueil</Link></li>
           <li><Link className="hover:text-azure" to="/concerts">Programme</Link></li>
-          <li><a href="#billetterie" className="hover:text-azure">Billetterie</a></li>
-          <li><a href="#carte" className="hover:text-azure">Carte</a></li>
+          <li><Link className="hover:text-azure" to="/billets">Billeterie</Link></li>
+          <li><Link className="hover:text-azure" to="/map">Carte</Link></li>
           <li><Link className="hover:text-azure" to="/infos">Informations</Link></li>
         </ul>
       </nav>

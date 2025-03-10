@@ -66,7 +66,7 @@ const Concerts = () => {
             
         <div className='flex flex-col w-full  p-8'>
 
-      <h1 className=' flex p-6 font-extrabold text-3xl justify-center'>Concerts</h1>
+      <h1 className='text-darkPurple flex p-6 font-extrabold text-3xl justify-center'>Concerts</h1>
 
       {/* Boutons de filtre */}
       <div className="flex  space-x-4 mb-4 justify-center ">
@@ -82,7 +82,7 @@ const Concerts = () => {
             <div className='flex items-center space-x-4'>
               <div className='w-52'>
                 {/* Afficher l'image si elle existe */}
-                {images [concert.id] && <img src={images[concert.id]} alt={concert.title.rendered} />}
+                {images[concert.id] && <img src={images[concert.id]} alt={concert.title.rendered} />}
               </div>
             
             {/* Informations du concert */}
