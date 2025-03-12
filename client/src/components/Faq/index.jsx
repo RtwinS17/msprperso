@@ -27,7 +27,7 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <li
             key={faq.id}
-            className="border border-coral rounded-lg p-4 shadow-md"
+            className="border bg-white border-coral border-l-4 rounded-lg p-4 shadow-md"
           >
             <div
               className="flex justify-between items-center cursor-pointer"

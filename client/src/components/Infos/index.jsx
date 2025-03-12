@@ -24,10 +24,10 @@ const Infos = () => {
         {alertes.map((alerte) => (
           <div
             key={alerte.id}
-            className="bg-coral shadow-lg p-4 lg:p-6 rounded-3xl border-l-4 mb-8"
+            className="bg-white border border-coral border-l-4 shadow-lg p-4 lg:p-6 rounded-3xl mb-8"
           >
-            <h3 className="md:text-xl text-center font-semibold">{alerte.acf.titre}</h3>
-            <p className="text-white mt-2 text-sm md:text-base">{alerte.acf.description}</p>
+            <h3 className=" text-orange md:text-xl text-center font-semibold">{alerte.acf.titre}</h3>
+            <p className=" mt-2 text-sm md:text-base">{alerte.acf.description}</p>
           </div>
         ))}
       </div>

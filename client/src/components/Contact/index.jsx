@@ -33,7 +33,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className=" w-10/12 mx-auto my-8 bg-white p-6 rounded-lg shadow-md">
+    <div className=" w-10/12 mx-auto my-8 border border-coral border-l-4 bg-white p-6 rounded-lg shadow-md">
       {successMessage && <p className="text-green-500 mb-4">{successMessage}</p>}
       {errorMessage && <p className="text-red-500 mb-4">{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
