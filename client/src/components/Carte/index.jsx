@@ -54,7 +54,7 @@ const MapIndex = () => {
           case "health":
             return healthIcon;
           default:
-            return sceneIcon; // Icône par défaut si aucun type ne correspond
+            return sceneIcon; 
         }
       };
 
