@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 
 const Partenaires = () => {
   const [partenaires, setPartenaires] = useState([]);
-  const categoryId = '4'; // Remplace par l'ID de la catégorie "partenaires"
+  const categoryId = '4'; 
 
   useEffect(() => {
-    // Récupération des partenaires depuis l'API WordPress
+    
     fetch(`http://localhost/mspr_remi/wordpress/wp-json/wp/v2/posts?categories=${categoryId}`)
       .then((response) => response.json())
       .then(async (data) => {
-        // Ajouter les logos pour chaque partenaire
+      
         const partenairesAvecLogos = await Promise.all(
           data.map(async (partenaire) => {
             const imageId = partenaire.acf.logo;
@@ -22,10 +22,10 @@ const Partenaires = () => {
                 return { ...partenaire, logoUrl: imageData.source_url };
               } catch (error) {
                 console.error("Erreur lors de la récupération de l'image:", error);
-                return { ...partenaire, logoUrl: null }; // En cas d'erreur
+                return { ...partenaire, logoUrl: null }; 
               }
             } else {
-              return { ...partenaire, logoUrl: null }; // Si pas de logo
+              return { ...partenaire, logoUrl: null }; 
             }
           })
         );
@@ -35,22 +35,23 @@ const Partenaires = () => {
   }, [categoryId]);
 
   return (
-    <div className="border border-y-8 bg-white flex flex-col items-center  p-4 w-full">
+    <div className="border border-y-6 bg-white flex flex-col items-center  p-4 w-full">
       <h2 className="text-2xl text-darkPurple font-bold mb-4 md:text-lg">Nos partenaires :</h2>
-      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
+      <div className="flex space-x-6 overflow-x-scroll  md:overflow-x-auto">
         {partenaires.map((partenaire) => (
           <div key={partenaire.id} className="flex-none">
+            
             {partenaire.logoUrl ? (
-              <a href={partenaire.acf.lien} target="_blank" rel="noopener noreferrer">              
-              <img
-                src={partenaire.logoUrl}
-                alt={partenaire.title.rendered}
-                className="h-16 w-auto object-contain mx-2"
-              />
-              </a>
-            ) : (
-              <p className="text-gray-500 italic">Logo indisponible</p>
-            )}
+             <a href={partenaire.acf.lien} target="_blank" rel="noopener noreferrer">              
+            <img
+      src={partenaire.logoUrl}
+      alt={partenaire.title.rendered}
+      className="h-16 md:h-24 w-auto object-cover mx-2"
+    />
+  </a>
+) : (
+  <p className="text-gray-500 italic">Logo indisponible</p>
+)}
           </div>
         ))}
       </div>

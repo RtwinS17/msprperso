@@ -6,7 +6,7 @@ const Homeinfos = () => {
     
         return (
             <Link to="/infos" className="w-10/12">
-                <div className="bg-cover shadow-lg shadow-darkPurple bg-center h-[350px] w-full flex items-center p-2 rounded-md text-antiFlashWhite"
+                <div className="bg-cover shadow-lg shadow-darkPurple bg-center h-[350px] w-full flex items-center p-2 rounded-md text-antiFlashWhite hover:scale-105 transition transform duration-300"
                     style={{ backgroundImage: `url(${home4})` }}>
                     <div className="flex flex-col justify-between  w-full h-full items-start">
                         <h1 className=" bg-coral p-2 font-bold text-l">INFOS</h1>

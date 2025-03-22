@@ -15,7 +15,6 @@ const Accueil = () => {
             <Homemap />
             <Homeinfos />
             <Partenaires />
-            
         </div>
     );
 }

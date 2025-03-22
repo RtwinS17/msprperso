@@ -14,6 +14,7 @@ import MapIndex from "./components/Carte";
 
 
 
+
 function App() {
   return (
 
@@ -31,6 +32,7 @@ function App() {
        <Route path="/faq" element={<FAQ />} />
        <Route path="/contact" element={<ContactForm />} />
        <Route path="/map" element={<MapIndex />} />
+       
       </Routes> 
       <Footer />
     </Router>

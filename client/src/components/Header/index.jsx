@@ -55,7 +55,7 @@ const Header = () => {
         </ul>
       </nav>
 
-      {/* OVERLAY POUR L'ARRIÈRE-PLAN FLOU LORSQUE LE MENU MOBILE EST OUVERT */}
+      
       {isOpen && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40" 
