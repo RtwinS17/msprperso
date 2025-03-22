@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -8,10 +10,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'wp_user',
-    password: 'Jumeaux.2017',
-    database: 'mspr_remi_wp'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 db.connect((err) => {
