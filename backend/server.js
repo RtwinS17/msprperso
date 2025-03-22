@@ -105,8 +105,20 @@ app.put("/faq/:id", (req, res) => {
 app.post("/messages", (req, res) => {
   const { name, email, subject, message } = req.body;
 
+  // Vérification de base
   if (!name || !email || !subject || !message) {
     return res.status(400).send("Tous les champs sont obligatoires.");
+  }
+
+  // Vérification des longueurs
+  if (name.length > 100 || subject.length > 200 || message.length > 2000) {
+    return res.status(400).send("Certains champs sont trop longs.");
+  }
+
+  // Validation email 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).send("Email invalide.");
   }
 
   const query = "INSERT INTO messages (name, email, subject, message) VALUES (?, ?, ?, ?)";
@@ -119,6 +131,7 @@ app.post("/messages", (req, res) => {
     res.status(201).send("Message enregistré avec succès.");
   });
 });
+
 
 
 //lancement du serveur
