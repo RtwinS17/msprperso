@@ -7,7 +7,7 @@ const FAQ = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/faq")
+      .get("https://msprperso-back.onrender.com/faq")
       .then((response) => setFaqs(response.data))
       .catch((error) =>
         console.error("Erreur lors de la récupération des FAQ :", error)

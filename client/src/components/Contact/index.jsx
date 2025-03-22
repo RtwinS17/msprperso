@@ -20,7 +20,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:5000/messages", formData)
+      .post("https://msprperso-back.onrender.com/messages", formData)
       .then((response) => {
         setSuccessMessage(response.data);
         setErrorMessage("");
