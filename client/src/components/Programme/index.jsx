@@ -8,7 +8,7 @@ const Concerts = () => {
   const categoryId = '3'; 
 
   useEffect(() => {
-    fetch(`http://localhost/mspr_remi/wordpress/wp-json/wp/v2/posts?categories=${categoryId}&per_page=30`)
+    fetch(`https://mspr-bdd.alwaysdata.net/wp-json/wp/v2/posts?categories=${categoryId}&per_page=30`)
       .then(response => response.json())
       .then(data => {
         

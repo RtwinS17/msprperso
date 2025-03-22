@@ -6,7 +6,7 @@ const Partenaires = () => {
 
   useEffect(() => {
     
-    fetch(`http://localhost/mspr_remi/wordpress/wp-json/wp/v2/posts?categories=${categoryId}`)
+    fetch(`https://mspr-bdd.alwaysdata.net/wp-json/wp/v2/posts?categories=${categoryId}`)
       .then((response) => response.json())
       .then(async (data) => {
       
