@@ -16,7 +16,7 @@ const Partenaires = () => {
             if (imageId) {
               try {
                 const imageResponse = await fetch(
-                  `http://localhost/mspr_remi/wordpress/wp-json/wp/v2/media/${imageId}`
+                  `https://mspr-bdd.alwaysdata.net/wp-json/wp/v2/media/${imageId}`
                 );
                 const imageData = await imageResponse.json();
                 return { ...partenaire, logoUrl: imageData.source_url };

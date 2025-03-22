@@ -26,7 +26,7 @@ const Concerts = () => {
         sortedConcerts.forEach(concert => {
           const imageId = concert.acf.image;
           if (imageId) {
-            fetch(`http://localhost/mspr_remi/wordpress/wp-json/wp/v2/media/${imageId}`)
+            fetch(`https://mspr-bdd.alwaysdata.net/wp-json/wp/v2/media/${imageId}`)
               .then(response => response.json())
               .then(imageData => {
                 setImages(prevImages => ({
